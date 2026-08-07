@@ -1119,7 +1119,7 @@ function get_pecl_extension {
 cd "$BUILD_DIR/php"
 write_out "PHP" "Downloading additional extensions..."
 
-get_github_extension "pmmpthread" "$EXT_PMMPTHREAD_VERSION" "pmmp" "ext-pmmpthread"
+# get_github_extension "pmmpthread" "$EXT_PMMPTHREAD_VERSION" "pmmp" "ext-pmmpthread"
 
 
 get_github_extension "yaml" "$EXT_YAML_VERSION" "php" "pecl-file_formats-yaml"
@@ -1276,7 +1276,7 @@ $HAS_DEBUG \
 --enable-mbstring \
 --disable-mbregex \
 --enable-calendar \
---enable-pmmpthread \
+--disable-pmmpthread \
 --enable-fileinfo \
 --with-libxml \
 --enable-xml \
@@ -1286,7 +1286,7 @@ $HAS_DEBUG \
 --enable-xmlwriter \
 --disable-cgi \
 --disable-phpdbg \
---disable-session \
+--enable-session \
 --without-pear \
 --without-iconv \
 --with-pdo-sqlite \
@@ -1298,12 +1298,13 @@ $HAS_DEBUG \
 --enable-shared=no \
 --enable-static=yes \
 --enable-shmop \
---enable-zts \
+--disable-zts \
 --disable-short-tags \
 $HAVE_PCNTL \
 $HAVE_MYSQLI \
 --enable-bcmath \
 --enable-cli \
+--enable-cli-server \
 --enable-ftp \
 --enable-opcache=$HAVE_OPCACHE \
 --enable-opcache-jit=$HAVE_OPCACHE_JIT \
